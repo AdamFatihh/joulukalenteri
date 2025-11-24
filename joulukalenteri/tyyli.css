@@ -4,7 +4,7 @@ body {
     text-align: center;
 }
 
-#calendar {
+#kalenteri {
     max-width: 600px;
     margin: 20px auto;
     display: grid;
@@ -12,7 +12,8 @@ body {
     gap: 10px;
 }
 
-.door {
+
+.luukku {
     background: #d63333;
     color: white;
     padding: 20px;
@@ -22,8 +23,31 @@ body {
     transition: 0.3s;
 }
 
-.door.open {
-    background: gold;
+.luukku.avattu {
+    background: rgb(13, 198, 25);
     color: #333;
     transform: scale(1.1);
+}
+
+#viesti {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #333;
+    min-height: 30px; 
+}
+
+.lahja {
+    width: 30px;
+    height: 30px;
+    background: red; 
+    position: absolute;
+    top: -50px;
+    left: 50%; 
+    border-radius: 5px;
+    animation: tiputus 2s linear forwards;
+}
+
+@keyframes tiputus {
+    0% { top: -50px; }
+    100% { top: 400px; }
 }
