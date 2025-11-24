@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #ce0b0b;
+    text-align: center;
+}
+
+#calendar {
+    max-width: 600px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+}
+
+.door {
+    background: #d63333;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.door.open {
+    background: gold;
+    color: #333;
+    transform: scale(1.1);
+}
