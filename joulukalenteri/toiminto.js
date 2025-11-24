@@ -44,6 +44,11 @@ for (let i=1; i<=24; i++) {
 
         luukku.classList.add("avattu");
         viestiDiv.textContent = viestit[i - 1]; 
+
+        for (let j = 0; j < 5; j++) {
+        luoLahja();
+
+        } 
     });
     
     
@@ -53,5 +58,10 @@ for (let i=1; i<=24; i++) {
 function luoLahja() {
     const lahja = document.createElement("div");
     lahja.classList.add("lahja");
+    lahja.style.left = Math.random() * window.innerWidth + "px";
     document.body.appendChild(lahja);
+
+    setTimeout(() => {
+        lahja.remove();
+    }, 2000);
 }
