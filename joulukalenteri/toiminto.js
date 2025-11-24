@@ -42,8 +42,13 @@ for (let i=1; i<=24; i++) {
             return;
         }
 
-        luukku.classList.add("avattu");
-        viestiDiv.textContent = viestit[i - 1]; 
+        if (luukku.classList.contains("avattu")) {
+            luukku.classList.remove("avattu"); // menee kiinni
+            viestiDiv.textContent = "";        // tyhjennä viesti
+        } else {
+            luukku.classList.add("avattu");    // menee auki
+            viestiDiv.textContent = viestit[i - 1]; // näytä viesti
+        } 
 
         for (let j = 0; j < 5; j++) {
         luoLahja();
