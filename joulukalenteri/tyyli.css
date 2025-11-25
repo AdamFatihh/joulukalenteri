@@ -4,6 +4,13 @@ body {
     text-align: center;
 }
 
+h1 {
+    font-family: 'Mountains of Christmas', cursive;
+    color: #00ff11;
+    text-shadow: 2px 2px 5px red;
+    font-size: 6rem; 
+}
+
 #kalenteri {
     max-width: none;
     margin: 20px auto;
@@ -32,6 +39,9 @@ body {
     background: rgb(13, 198, 25);
     color: #333;
     transform: scale(1.1);
+    background-size: cover;
+    background-position: center;
+    color: transparent;
 }
 
 #viesti {

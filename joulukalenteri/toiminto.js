@@ -2,31 +2,8 @@ const kalenteri = document.getElementById("kalenteri");
 
 const paivaTanaan = new Date().getDate();
 
-const viestit = [
-    "Hyvää joulunodotusta!",
-    "Piparit uuniin!",
-    "Luo lumiukko!",
-    "Koristele kuusi!",
-    "Katso jouluvalot!",
-    "Kirjoita joulukortti!",
-    "Juo kaakaota!",
-    "Leivo kakku!",
-    "Kuuntele joululauluja!",
-    "Lue satu!",
-    "Väritä joulukuva!",
-    "Tee lahjalista!",
-    "Katso jouluelokuva!",
-    "Piirrä tonttu!",
-    "Käy ulkona!",
-    "Laita jouluvalot!",
-    "Leiki lumessa!",
-    "Kirjoita kirje Joulupukille!",
-    "Nauti jouluteetä!",
-    "Käy joulumarkkinoilla!",
-    "Tee joululahja!",
-    "Kokoa palapeli!",
-    "Kuuntele tarina!",
-    "Juhli joulua!"
+const kuvat = [
+    "kuvat/kesa1.jpg","kuvat/kesa2.jpg", "kuvat/kesa3.webp", "kuvat/kesa4.jpg", "kuvat/kesa5.jpg", "kuvat/kesa6.webp", "kuvat/kesa7.jpg", "kuvat/kesa8.jpg", "kuvat/kesa9.webp", "kuvat/kesa10.jpg", "kuvat/kesa11.jpg", "kuvat/kesa12.jpg"
 ];
 
 const viestiDiv = document.getElementById("viesti");
@@ -46,6 +23,7 @@ for (let r = 0; r < rivit.length; r++) {
         const luukku = document.createElement("div");
         luukku.classList.add("luukku");
         luukku.textContent = luukkuNumero;
+        const thisLukkuNumero = luukkuNumero;
 
         luukku.addEventListener("click", () => {
             if (luukkuNumero > paivaTanaan) {
@@ -54,12 +32,14 @@ for (let r = 0; r < rivit.length; r++) {
             }
             if (luukku.classList.contains("avattu")) {
                 luukku.classList.remove("avattu");
-                viestiDiv.textContent = "";
+                luukku.style.backgroundImage = "";
             } else {
                 luukku.classList.add("avattu");
-                viestiDiv.textContent = viestit[luukkuNumero - 1];
-            }
+                const kuvaIndex = (thisLukkuNumero - 1) % kuvat.length;
+                luukku.style.backgroundImage = `url('${kuvat[kuvaIndex]}')`;
 
+            } 
+            
             for (let j = 0; j < 5; j++) {
                 luoLahja();
             }
@@ -93,9 +73,8 @@ function luoLahja() {
 function luoLumi() {
     const lumi = document.createElement("div");
     lumi.classList.add("lumi");
-
     lumi.style.left = Math.random() * window.innerWidth + "px";
-    lumi.style.animationDuration = (3 + Math.random() * 3) + "s";
+    lumi.style.animationDuration = (2 + Math.random() * 2) + "s";
 
     document.body.appendChild(lumi);
 
