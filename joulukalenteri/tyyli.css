@@ -39,14 +39,14 @@ body {
 .lahja {
     width: 40px;
     height: 40px;
-    background-image: url("https://e7.pngegg.com/pngimages/368/578/png-clipart-red-and-gold-gift-box-illustration-christmas-gift-christmas-day-large-red-gift-box-with-gold-bow-ribbon-image-file-formats.png");
-    background-color: #ce0b0b;
-    background-size: cover;
+    background-image: url("kuvat/oikea_lahja.png");
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
     position: absolute;
     top: -50px;
     left: 50%;
-    border-radius: 5px;
+    border-radius: 0;
     animation: tiputus 2s linear forwards;
 }
 
