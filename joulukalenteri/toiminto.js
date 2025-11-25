@@ -29,36 +29,48 @@ const viestit = [
     "Juhli joulua!"
 ];
 
-let viestiDiv = document.getElementById("viesti");
+const viestiDiv = document.getElementById("viesti");
 
-for (let i=1; i<=24; i++) {
-    const luukku = document.createElement("div");
-    luukku.classList.add("luukku");
-    luukku.textContent = i;
+const rivienMaara = 5;
+let luukkuNumero = 1;
 
-    luukku.addEventListener("click", () => {
-        if (i > paivaTanaan) {
-            viestiDiv.textContent = "Tätä luukkua ei voi vielä avata!";
-            return;
-        }
+for (let r = 0; r < rivienMaara; r++) {
+    const riviDiv = document.createElement("div");
+    riviDiv.classList.add("rivi");
 
-        if (luukku.classList.contains("avattu")) {
-            luukku.classList.remove("avattu"); // menee kiinni
-            viestiDiv.textContent = "";        // tyhjennä viesti
-        } else {
-            luukku.classList.add("avattu");    // menee auki
-            viestiDiv.textContent = viestit[i - 1]; // näytä viesti
-        } 
+    for (let i = 0; i <= r; i++) {
+        if (luukkuNumero > 24) break;
+        const luukku = document.createElement("div");
+        luukku.classList.add("luukku");
+        luukku.textContent = luukkuNumero;
 
-        for (let j = 0; j < 5; j++) {
-        luoLahja();
+        luukku.addEventListener("click", () => {
+            if (luukkuNumero > paivaTanaan) {
+                viestiDiv.textContent = "Tätä et voi vielä avata!";
+                return;
+            }
+            if (luukku.classList.contains("avattu")) {
+                luukku.classList.remove("avattu");
+                viestiDiv.textContent = "";
+            } else {
+                luukku.classList.add("avattu");
+                viestiDiv.textContent = viestit[luukkuNumero - 1];
+            }
 
-        } 
-    });
+            for (let j = 0; j < 5; j++) {
+                luoLahja();
+            }
+        });
+
     
     
-    kalenteri.appendChild(luukku);
+     riviDiv.appendChild(luukku);
+        luukkuNumero++; // Älä unohda kasvattaa luukkuNumeroa
+    } // <-- suljetaan sisempi for (let i)
+
+    kalenteri.appendChild(riviDiv); // rivi liitetään kalenteriin kerran per rivi
 }
+
 
 function luoLahja() {
     const lahja = document.createElement("div");
