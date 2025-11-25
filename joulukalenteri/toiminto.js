@@ -31,15 +31,18 @@ const viestit = [
 
 const viestiDiv = document.getElementById("viesti");
 
-const rivienMaara = 5;
+const rivit = [1, 2, 3, 4, 5, 6, 2, 1];
 let luukkuNumero = 1;
 
-for (let r = 0; r < rivienMaara; r++) {
+for (let r = 0; r < rivit.length; r++) {
+
     const riviDiv = document.createElement("div");
     riviDiv.classList.add("rivi");
 
-    for (let i = 0; i <= r; i++) {
+    for (let i = 0; i < rivit[r]; i++) {
+
         if (luukkuNumero > 24) break;
+
         const luukku = document.createElement("div");
         luukku.classList.add("luukku");
         luukku.textContent = luukkuNumero;
@@ -60,17 +63,20 @@ for (let r = 0; r < rivienMaara; r++) {
             for (let j = 0; j < 5; j++) {
                 luoLahja();
             }
+        
         });
 
-    
-    
-     riviDiv.appendChild(luukku);
-        luukkuNumero++; // Älä unohda kasvattaa luukkuNumeroa
-    } // <-- suljetaan sisempi for (let i)
+        riviDiv.appendChild(luukku);
+        luukkuNumero++;
+    }
 
-    kalenteri.appendChild(riviDiv); // rivi liitetään kalenteriin kerran per rivi
+    kalenteri.appendChild(riviDiv);
 }
+    
+    
+   
 
+    
 
 function luoLahja() {
     const lahja = document.createElement("div");
@@ -82,3 +88,20 @@ function luoLahja() {
         lahja.remove();
     }, 2000);
 }
+
+
+function luoLumi() {
+    const lumi = document.createElement("div");
+    lumi.classList.add("lumi");
+
+    lumi.style.left = Math.random() * window.innerWidth + "px";
+    lumi.style.animationDuration = (3 + Math.random() * 3) + "s";
+
+    document.body.appendChild(lumi);
+
+    setTimeout(() => {
+        lumi.remove();
+    }, parseFloat(lumi.style.animationDuration) * 1000);
+}
+
+setInterval(luoLumi, 100); 
