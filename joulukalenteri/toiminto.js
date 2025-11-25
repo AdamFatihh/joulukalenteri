@@ -1,29 +1,29 @@
-const kalenteri = document.getElementById("kalenteri");
+let kalenteri = document.getElementById("kalenteri");
 
-const paivaTanaan = new Date().getDate();
+let paivaTanaan = new Date().getDate();
 
-const kuvat = [
-    "kuvat/kesa1.jpg","kuvat/kesa2.jpg", "kuvat/kesa3.webp", "kuvat/kesa4.jpg", "kuvat/kesa5.jpg", "kuvat/kesa6.webp", "kuvat/kesa7.jpg", "kuvat/kesa8.jpg", "kuvat/kesa9.webp", "kuvat/kesa10.jpg", "kuvat/kesa11.jpg", "kuvat/kesa12.jpg"
+let kuvat = [
+    "kuvat/kesa1.jpg","kuvat/kesa2.jpg", "kuvat/kesa3.webp", "kuvat/kesa4.jpg", "kuvat/kesa5.jpg", "kuvat/kesa6.webp", "kuvat/kesa7.jpg", "kuvat/kesa8.jpg", "kuvat/kesa9.webp", "kuvat/kesa10.jpg", "kuvat/kesa11.jpg", "kuvat/kesa12.jpg", "kuvat/kesa13.jpg", "kuvat/kesa14.jpg", "kuvat/kesa15.webp", "kuvat/kesa16.jpeg", "kuvat/kesa17.webp", "kuvat/kesa18.jpg", "kuvat/kesa19.webp", "kuvat/kesa20.jpg", "kuvat/kesa21.jpeg", "kuvat/kesa22.webp", "kuvat/kesa23.jpg", "kuvat/kesa24.jpg"
 ];
 
-const viestiDiv = document.getElementById("viesti");
+let viestiDiv = document.getElementById("viesti");
 
-const rivit = [1, 2, 3, 4, 5, 6, 2, 1];
+let rivit = [1, 2, 3, 4, 5, 6, 2, 1];
 let luukkuNumero = 1;
 
 for (let r = 0; r < rivit.length; r++) {
 
-    const riviDiv = document.createElement("div");
+    let riviDiv = document.createElement("div");
     riviDiv.classList.add("rivi");
 
     for (let i = 0; i < rivit[r]; i++) {
 
         if (luukkuNumero > 24) break;
 
-        const luukku = document.createElement("div");
+        let luukku = document.createElement("div");
         luukku.classList.add("luukku");
         luukku.textContent = luukkuNumero;
-        const thisLukkuNumero = luukkuNumero;
+        let thisLukkuNumero = luukkuNumero;
 
         luukku.addEventListener("click", () => {
             if (luukkuNumero > paivaTanaan) {
@@ -59,7 +59,7 @@ for (let r = 0; r < rivit.length; r++) {
     
 
 function luoLahja() {
-    const lahja = document.createElement("div");
+    let lahja = document.createElement("div");
     lahja.classList.add("lahja");
     lahja.style.left = Math.random() * window.innerWidth + "px";
     document.body.appendChild(lahja);
@@ -71,7 +71,7 @@ function luoLahja() {
 
 
 function luoLumi() {
-    const lumi = document.createElement("div");
+    let lumi = document.createElement("div");
     lumi.classList.add("lumi");
     lumi.style.left = Math.random() * window.innerWidth + "px";
     lumi.style.animationDuration = (2 + Math.random() * 2) + "s";
