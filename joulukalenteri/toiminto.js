@@ -3,7 +3,7 @@ let kalenteri = document.getElementById("kalenteri");
 let paivaTanaan = new Date().getDate();
 
 let kuvat = [
-    "kuvat/kesa1.jpg","kuvat/kesa2.jpg", "kuvat/kesa3.webp", "kuvat/kesa4.jpg", "kuvat/kesa5.jpg", "kuvat/kesa6.webp", "kuvat/kesa7.jpg", "kuvat/kesa8.jpg", "kuvat/kesa9.webp", "kuvat/kesa10.jpg", "kuvat/kesa11.jpg", "kuvat/kesa12.jpg", "kuvat/kesa13.jpg", "kuvat/kesa14.jpg", "kuvat/kesa15.webp", "kuvat/kesa16.jpeg", "kuvat/kesa17.webp", "kuvat/kesa18.jpg", "kuvat/kesa19.webp", "kuvat/kesa20.jpg", "kuvat/kesa21.jpeg", "kuvat/kesa22.webp", "kuvat/kesa23.jpg", "kuvat/kesa24.jpg"
+    "kuvat/kesa1.jpg","kuvat/kesa2.jpg", "kuvat/kesa3.webp", "kuvat/kesa4.jpg", "kuvat/kesa5.jpg", "kuvat/kesa6.webp", "kuvat/kesa7.jpg", "kuvat/kesa8.jpg", "kuvat/kesa9.webp", "kuvat/kesa10.jpg", "kuvat/kesa11.jpg", "kuvat/kesa12.jpg", "kuvat/kesa13.jpeg", "kuvat/kesa14.jpg", "kuvat/kesa15.webp", "kuvat/kesa16.jpeg", "kuvat/kesa17.webp", "kuvat/kesa18.jpg", "kuvat/kesa19.webp", "kuvat/kesa20.jpg", "kuvat/kesa21.jpeg", "kuvat/kesa22.webp", "kuvat/kesa23.jpg", "kuvat/kesa24.jpg"
 ];
 
 let viestiDiv = document.getElementById("viesti");
@@ -35,8 +35,7 @@ for (let r = 0; r < rivit.length; r++) {
                 luukku.style.backgroundImage = "";
             } else {
                 luukku.classList.add("avattu");
-                const kuvaIndex = (thisLukkuNumero - 1) % kuvat.length;
-                luukku.style.backgroundImage = `url('${kuvat[kuvaIndex]}')`;
+                luukku.style.backgroundImage = `url('${kuvat[thisLukkuNumero - 1]}')`; 
 
             } 
             
