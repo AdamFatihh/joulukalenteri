@@ -2,9 +2,9 @@ body {
     font-family: Arial, sans-serif;
     background: #ce0b0b;
     text-align: center;
-    background-image: url("kuvat/taustakuva2.jpg"); /* polku kuvaasi */
-    background-size: cover;        /* kuvan koko kattaa koko taustan */
-    background-position: center;   /* keskitä kuva */
+    background-image: url("kuvat/taustakuva3.jpg"); 
+    background-size: cover;        
+    background-position: center;   
     background-repeat: no-repeat;
 }
 
